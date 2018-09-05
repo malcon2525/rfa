@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <title>Manager On Click &reg;</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  
+  <meta name="title" content="Painel Adm - Manager OnClick" />
+  <meta name="description" content="Àrea restrita" />
+  <meta name="robots" content="NOINDEX,NOFOLLOW" />
+  
+  <link rel="shortcut icon" href="favicon.ico">
+  
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="css/main.css">
+  
+  <script src="../js/jquery.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.js"></script>
+</head>
+
+
+<body>
+  
+
+<div class="container tudo">
+ <div class="row">
+  <div class="col-3 col-esquerda">
+    <ul class="menu-adm-esquerdo">
+      <li class="mnu-manager"><span>Manager</span> OnClick</li>
+      <li class="mnu-logo"><img src="images/logo_explay.png" alt=""></li>
+      <li class="mnu-titulo">Conteúdo</li>
+      <li class="mnu-item"><a href="#">Gerenciar Conteúdo</a></li>
+      <li class="mnu-item"><a href="#">Estatísticas</a></li>
+    </ul>
+  </div>
+
+  <div class="col-9 col-direita">
+
+
+  
+  <!-- 
+  menu topo adm -->
+<div> 
+<nav class="navbar navbar-expand-lg navbar-light ">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item ">
+        <a class="nav-link" href="#">Página Inicial <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sair</a>
+      </li>
+
+
+    </ul>
+
+  </div>
+</nav>
+ </div>  
+  
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+      
+          
+  
+<!-- cadastro de menus -->  
+  
+
+ 
+ <p class="nome-recurso">gerenciamento de conteúdo</p>
+ <p class="nome-acao">Você está cadastrando um menu </p>
+ 
+  
+<div id="accordion-menu" role="tablistMenu" >
+ 
+ 
+ 
+  <div class="card ">
+    <div class="card-header bg-dark" role="tabMenu" id="headingOneMenu">
+      <h5 class="mb-0 titulo-localizacao-menu">
+        <a data-toggle="collapse" href="#collapseOneMenu" aria-expanded="true" aria-controls="collapseOne">
+          Menu: <span>Nome do Menu</span>
+        </a>
+      </h5>
+    </div>
+
+    <div id="collapseOneMenu" class="collapse show" role="tabpanel" aria-labelledby="headingOneMenu" data-parent="#accordion-menu">
+      <div class="card-body">
+        
+        
+      <form>
+        
+      
+        <div class="form-row">
+          <div class="form-group col-md-5">
+
+            <label for="descricao">Título <sup>(máx. 25 Caracteres)</sup></label>
+            <input type="text" class="form-control" id="descricao" placeholder="" maxlength="25">
+          </div>
+          <div class="form-group col-md-3">
+            <label for="ordem">Ordem<sup>(máx. 4 Caracteres)</sup></label>
+            <input type="text" class="form-control" id="ordem" placeholder="" maxlength="4" pattern="[0-9]{0,4}">
+          </div>
+          
+           <div class="form-group col-md-4">
+            <label for="situacao">Situação</label>
+            <select id="situacao" class="form-control">
+              <option selected>Ativo</option>
+              <option>Desativado</option>
+            </select>
+          </div>
+        </div>
+        
+        <hr>
+        
+        <div class="form-row">
+          <div class="form-group col-md-5">
+            <label for="precedencia">Menu Pai</label>
+            <select id="precedencia" class="form-control">
+              <option selected>Nenhum</option>
+              <option>Menu1</option>
+            </select>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="precedencia">Tipo do Menu</label>
+            <select id="precedencia" class="form-control">
+              <option selected>Lista Normal</option>
+              <option>Lista em Coluna</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+
+            <label for="url">URL</label>
+            <input type="text" class="form-control" id="url" placeholder="" >
+          </div>
+        </div>
+        
+        <div class="form-row">
+         <div class="form-group col-md-8">
+            <label for="conteudo">Descrição do Menu</label>
+            <textarea class="form-control" rows="4" id="conteudo"></textarea>
+          </div>
+           <div class="form-group col-md-4">
+            <label for="tags">Tags</label>
+            <textarea class="form-control" rows="4" id="tags"></textarea>
+          </div>
+          
+          
+        </div>
+        
+        <div class="d-flex justify-content-end " >
+        <a href="#" class="btn btn-secondary mr-1 "> Voltar</a>
+        <a href="#" class="btn btn-primary "> Gravar</a>
+        </div>                
+      </form>  
+        
+      </div>
+    </div>
+  </div>
+  
+
+
+</div>    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- Lista de conteudos por menu -->  
+  
+  
+  
+  <p class="nome-recurso">gerenciamento de conteúdo</p>
+ <p class="nome-acao">Lista de Conteúdo </p>
+ 
+  
+<div id="accordion-ListaMenu" role="tablistMenu" >
+ 
+ 
+ 
+  <div class="card ">
+    <div class="card-header bg-dark" role="tabListaMenu" id="headingOneListaMenu">
+      <h5 class="mb-0 titulo-localizacao-menu">
+        <a data-toggle="collapse" href="#collapseOneListaMenu" aria-expanded="true" aria-controls="collapseListaMenu">
+          Conteúdos do Menu: <span>Nome do Menu</span>
+        </a>
+      </h5>
+    </div>
+
+    <div id="collapseOneListaMenu" class="collapse show" role="tabpanel" aria-labelledby="headingOneListaMenu" data-parent="#accordion-ListaMenu">
+      <div class="card-body">
+        
+      <table class="table table-sm table-hover">
+       
+       <tr>
+         <th style="width: 500px">Título</th>
+         <th></th>
+         <th></th>
+         <th></th>
+       </tr>
+       <tr>
+         <td><a href="#" class="btn btn-light d-flex justify-content-start">Título do conteúdo aqui</a></td>
+         <td><a href="#" class="btn btn-info">Editar</a></td>
+         <td><a href="#" class="btn btn-danger">Excluir</a></td>
+         <td><a href="#" class="btn btn-warning">Comentários <span class="badge badge-light">4</span> <span class="badge badge-success">2</span></a></td>
+       </tr>
+        
+      </table>  
+      
+        
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+  
+  
+  
+  
+  
+  <!-- Cadastro de conteudos por menu -->  
+  
+  
+  
+  <p class="nome-recurso">gerenciamento de conteúdo</p>
+ <p class="nome-acao">Lista de Conteúdo </p>
+ 
+<br><br>  
+
+<div id="accordion-ListaMenu" role="tablistMenu" >
+ 
+   <div class="card ">
+    <div class="card-header bg-dark" role="tabListaMenu" id="headingOneListaMenu">
+      <h5 class="mb-0 titulo-localizacao-menu">
+        <a data-toggle="collapse" href="#collapseOneListaMenu" aria-expanded="true" aria-controls="collapseListaMenu">
+          Conteúdos do Menu: <span>Nome do Menu</span>
+        </a>
+      </h5>
+    </div>
+
+    <div id="collapseOneListaMenu" class="collapse show" role="tabpanel" aria-labelledby="headingOneListaMenu" data-parent="#accordion-ListaMenu">
+      <div class="card-body">
+      
+       <a href="#" class="btn btn-primary mb-2">Inserir Conteúdo</a>  
+            
+      <table class="table table-sm table-hover">
+       
+       <tr>
+         <th style="width: 500px">Título</th>
+         <th></th>
+         <th></th>
+         <th></th>
+       </tr>
+       <tr>
+         <td><a href="#" class="btn btn-light d-flex justify-content-start">Título do conteúdo aqui</a></td>
+         <td><a href="#" class="btn btn-info">Editar</a></td>
+         <td><a href="#" class="btn btn-danger">Excluir</a></td>
+         <td><a href="#" class="btn btn-warning">Comentários <span class="badge badge-light">4</span> <span class="badge badge-success">2</span></a></td>
+       </tr>
+        
+      </table>  
+      
+        
+      </div>
+    </div>
+  </div>
+  
+</div> 
+
+
+
+
+
+  </div>  
+   
+ </div>
+  
+</div>
+
+
+</body>
+
+
+</html>

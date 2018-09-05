@@ -1,0 +1,1540 @@
+/*
+* @package      Style
+* @description  This package holds all common style declarations
+*               of the site
+*/
+@import "_variables.scss";
+@import "includes/_mixins.scss";
+@import "includes/_normalize.scss";
+@import "includes/_page-layouts.scss";
+@import "includes/tm-grid/_tm-grid.scss";
+
+/*
+* @section      Main Styles
+* @description  This section holds template default elements style declarations
+*/
+
+html {
+  font-size: 60px;
+
+  @media (min-width: $screen-sm-min) and (max-width: $screen-md-min - 1) {
+    font-size: 70px;
+  }
+
+  @media (min-width: $screen-md-min) and (max-width: $screen-lg-min - 1) {
+    font-size: 80px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    font-size: 100px;
+  }
+
+  .old-ie {
+    display: none;
+  }
+
+  &.lt-ie11 {
+    .old-ie {
+      display: block;
+    }
+  }
+}
+
+body {
+  font-family: $default-font-family;
+  font-weight: $default-font-weight;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-text-size-adjust: none;
+  color: $content-color;
+  background: $content-bg;
+  letter-spacing: 0.02em;
+  @media (min-width: $screen-md-min) {
+    font-size: $default-font-size;
+    line-height: $default-line-height;
+  }
+}
+
+/*
+* @subsection   Typography
+* @description  Describes default font settings for basic html elements and
+*               css classes
+*/
+
+h1, h2, h3, h4, h5, h6,
+.heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6 {
+  display: block;
+  color: $default;
+  font-weight: 400;
+  font-family: $secondary-font-family-1;
+  a:hover {
+    color: $primary;
+  }
+}
+
+h1, .heading-1 {
+  font-size: 38px;
+  line-height: 1.33;
+  letter-spacing: 0.05em;
+  @media (min-width: $screen-sm-min) {
+    font-size: 60px;
+    line-height: 1.16;
+  }
+
+  @media (min-width: $screen-xl-min) {
+    font-size: 66px;
+    line-height: 80px;
+  }
+}
+
+h2, .heading-2 {
+  font-size: 34px;
+  line-height: 1.5;
+  letter-spacing: .035em;
+  @media (min-width: $screen-sm-min) {
+    font-size: 52px;
+    line-height: 1.28;
+  }
+}
+
+h3, .heading-3 {
+  font-size: 30px;
+  line-height: 1.5;
+
+}
+
+h4, .heading-4 {
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+h5, .heading-5 {
+  font-size: 18px;
+}
+
+h6, .heading-6 {
+  font-size: 16px;
+}
+
+p, .list, .contact-info {
+  font-weight: 400;
+
+  a:hover {
+    color: $primary;
+  }
+}
+
+mark {
+  display: inline-block;
+  padding: 5px;
+  color: #FFF;
+  background: $primary;
+}
+
+em {
+  color: $primary;
+}
+
+small, .small {
+  display: block;
+  font-size: 0.875em;
+  line-height: 1.643em;
+}
+
+.big {
+  font-size: 1.2em;
+}
+
+time {
+  &:before {
+    padding-right: 8px;
+  }
+}
+
+a[href^="mailto:"] {
+  display: inline-block;
+  &:hover {
+    color: $primary;
+  }
+}
+
+hr {
+  height: 1px;
+  width: 100%;
+  display: none;
+  padding: 0;
+  background: rgba($default, 0.04);
+}
+
+/*
+* @section      Main Layout
+* @description  This section holds class declarations for elements indent creation
+*/
+
+/*
+* @subsection   Offsets
+* @description  Describes vertical indentation between the elements
+*/
+
+h1 + * {
+  margin-top: 20px;
+  @media (min-width: $screen-lg-min) {
+    margin-top: 60px;
+  }
+}
+
+h2 + p {
+  margin-top: 15px;
+  @media (min-width: $screen-md-min) {
+    margin-top: 25px;
+  }
+}
+
+h2 + .row {
+  margin-top: 50px;
+  @media (min-width: $screen-md-min) {
+    margin-top: 58px;
+  }
+}
+
+* + h5 {
+  margin-top: 10px;
+  @media (min-width: $screen-md-min) {
+    margin-top: 20px;
+  }
+}
+
+h5 + p {
+  margin-top: 13px;
+}
+
+p + p {
+  margin-top: 10px;
+}
+
+p + .link {
+  margin-top: 20px;
+}
+
+* + .terms-list {
+  margin-top: 30px;
+}
+
+.terms-list + * {
+  margin-top: 28px;
+}
+
+* + .index-list-1 {
+  margin-top: 20px;
+  @media (min-width: $screen-md-min) {
+    margin-top: 33px;
+  }
+}
+
+* + .btn {
+  margin-top: 20px;
+  @media (min-width: $screen-md-min) {
+    margin-top: 40px;
+  }
+}
+
+* + .discount {
+  margin-top: 20px;
+  @media (min-width: $screen-md-min) {
+    margin-top: 40px;
+  }
+}
+
+.discount + * {
+  margin-left: 10px;
+  @media (min-width: $screen-md-min) {
+    margin-left: 25px;
+  }
+}
+
+* + .owl-carousel {
+  margin-top: 33px;
+}
+
+.row + .row {
+  margin-top: 100px;
+  @media (min-width: $screen-md-min) {
+    margin-top: 150px;
+  }
+}
+
+* + .btn-group {
+  margin-top: 45px;
+}
+
+* + .container-fluid {
+  margin-top: 66px;
+}
+
+* + .rd-mailform {
+  margin-top: 40px;
+}
+
+* + .offset {
+  &-1 {
+    @media (min-width: $screen-lg-min) {
+      margin-top: 90px;
+    }
+  }
+
+}
+
+.inset-1 {
+  @media (min-width: $screen-lg-min) {
+    padding-top: 88px;
+  }
+}
+
+h2 + .row.offset-4 {
+  margin-top: 50px;
+  @media (min-width: $screen-md-min) {
+    margin-top: 100px;
+  }
+}
+
+h2 + .row.offset-5 {
+  margin-top: 32px;
+}
+
+h2 + .offset-3 {
+  margin-top: 35px;
+}
+
+.offset-3 + * {
+  margin-top: 26px;
+}
+
+.row + .row.offset-6 {
+  @media (min-width: $screen-lg-min) {
+    margin-top: 158px;
+  }
+}
+
+.offset-1 {
+  @media (min-width: $screen-lg-min) {
+    margin-top: 90px;
+  }
+}
+
+h2 + .offset-2 {
+  margin-top: 25px;
+}
+
+h2 + .offset-6 {
+  @media (min-width: $screen-md-min) {
+    margin-top: 35px;
+  }
+}
+
+.offset-6 + p {
+  margin-top: 26px;
+}
+
+.flow-offset-1 {
+  @include make-flow-offset(30px);
+}
+
+.flow-offset-2 {
+  @include make-flow-offset(60px);
+}
+
+.flow-offset-3 {
+  @include make-flow-offset(50px);
+}
+
+.container {
+  .rd-navbar-search-results {
+    .result-item + .result-item {
+      margin-top: 30px;
+    }
+  }
+}
+
+/*
+* @subsection   Postfix
+* @description  Describes instant right margin classes
+*/
+
+.postfix-1 {
+  @media (min-width: $screen-md-min) {
+    margin-right: 10px;
+  }
+}
+
+.postfix-2 {
+  @media (min-width: $screen-md-min) {
+    margin-right: 25px;
+  }
+}
+
+/*
+* @subsection   Prefix
+* @description  Describes instant left margin classes
+*/
+
+.preffix-1 {
+  @media (min-width: $screen-md-min) {
+    margin-left: 55px;
+  }
+}
+
+.preffix-2 {
+  @media (min-width: $screen-md-min) {
+    margin-left: 10px;
+  }
+}
+
+.preffix-3 {
+  @media (min-width: $screen-md-min) {
+    margin-left: 55px;
+  }
+}
+
+.preffix-4 {
+  @media (min-width: $screen-lg-min) {
+    margin-left: -100px;
+  }
+}
+
+.preffix-5 {
+  @media (min-width: $screen-md-min) {
+    margin-left: 30px;
+  }
+}
+
+/*
+* @subsection   Well
+* @description  Describes section inner indents
+*/
+
+.well {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.well-xs {
+
+  @media (min-width: $screen-lg-min) {
+    padding-top: 88px;
+    padding-bottom: 130px;
+  }
+}
+
+.well-sm {
+  @media (min-width: $screen-md-min) {
+    padding-top: 100px;
+    padding-bottom: 110px;
+  }
+}
+
+.well-md {
+  @media (min-width: $screen-md-min) {
+    padding-top: 105px;
+    padding-bottom: 120px;
+  }
+}
+
+.well-lg {
+  @media (min-width: $screen-md-min) {
+    padding-top: 115px;
+    padding-bottom: 130px;
+  }
+}
+
+.well-xl {
+  @media (min-width: $screen-md-min) {
+    padding-top: 120px;
+    padding-bottom: 115px;
+  }
+}
+
+.well--inset-1 {
+  @media (min-width: $screen-md-min) {
+    padding-top: 88px;
+    padding-bottom: 0;
+  }
+}
+
+.well--inset-2 {
+  @media (min-width: $screen-md-min) {
+    padding-top: 80px;
+  }
+}
+
+.well--inset-3 {
+  @media (min-width: $screen-md-min) {
+    padding-bottom: 115px;
+  }
+}
+
+.well--inset-4 {
+  @media (min-width: $screen-lg-min) {
+    padding-bottom: 90px;
+  }
+}
+
+.well--inset-5 {
+  @media (min-width: $screen-md-min) {
+    padding-bottom: 150px;
+  }
+}
+
+.well--inset-6 {
+  @media (min-width: $screen-md-min) {
+    padding-top: 100px;
+  }
+}
+
+/*
+* @section      Helpers
+* @description  This section holds various helper classes for
+*               conditional page styling
+*/
+
+.sm-visible {
+  display: none;
+  @media (min-width: $screen-sm-min) {
+    display: inherit;
+  }
+}
+
+.foreground-text {
+  z-index: 3;
+}
+
+.content-md-shift-up {
+  @media (min-width: $screen-md-min) {
+    margin-top: -125px;
+  }
+}
+
+.lg-visible {
+  visibility: hidden;
+  @media (min-width: $screen-lg-min) {
+    visibility: visible;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+/*
+* @subsection   Colors
+*/
+
+html body .page {
+  // Increases specificity to use with background helpers
+  .text-primary {
+    color: $primary;
+  }
+  .text-default {
+    color: $default;
+  }
+}
+
+/*
+* @subsection   Backgrounds
+*/
+.bg-primary {
+  background: $primary;
+
+  &, #{headings()} {
+    color: $white;
+  }
+
+  .icon-primary {
+    color: $white;
+    border-color: $white;
+    background: transparent;
+    box-shadow: $box-shadow-ambient;
+  }
+
+  p, .list, .terms-list {
+    a:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+}
+
+.bg-contrast-darkest {
+  background: $contrast-darkest;
+}
+
+@import "components/_floating.scss";
+@import "components/_text-alignment.scss";
+@import "components/_text-styling.scss";
+@import "components/_responsive-utilities";
+@import "components/_animate.scss";
+
+/*
+* @section      Icon Fonts
+* @description  This section holds all icon fonts stored in template
+*/
+
+@import "components/_font-awesome.scss";
+@import "components/_thin.scss";
+
+/*
+* @section      Components
+* @description  This section holds all elements style declarations of template
+*/
+
+@import "components/_buttons.scss";
+@import "components/_icons.scss";
+
+/*
+ * @subsection   Box
+ */
+@import "includes/tm-box/_boxes.scss";
+
+.box {
+
+}
+
+/*
+* @subsection   Link
+*/
+.link {
+  font-size: 14px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: $primary;
+  font-family: $secondary-font-family-2;
+  &:hover {
+    color: $default;
+  }
+}
+
+/*
+* @subsection   Discount
+*/
+.discount {
+  display: inline-block;
+  font-size: 33px;
+  line-height: 1;
+  letter-spacing: .03em;
+  font-family: $secondary-font-family-2;
+  vertical-align: middle;
+}
+
+/*
+* @subsection   News Post
+*/
+.news-post {
+
+  h4 {
+    @media (min-width: $screen-sm-min) {
+      font-size: 19px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 22px;
+    }
+  }
+
+  img + * {
+    margin-top: 10px;
+    @media (min-width: $screen-md-min) {
+      margin-top: 20px;
+    }
+  }
+
+  * + time {
+
+    margin-top: 10px;
+  }
+
+  time + * {
+    margin-top: 15px;
+    @media (min-width: $screen-md-min) {
+      margin-top: 23px;
+    }
+  }
+
+  time {
+    font-size: 14px;
+    line-height: 1.2;
+    color: $grayscale-lighten;
+    font-style: italic;
+  }
+
+  & + & {
+    margin-top: 50px;
+    @media (min-width: $screen-md-min) {
+      margin-top: 68px;
+    }
+  }
+}
+
+/*
+* @subsection   Quote
+*/
+.quote {
+  position: relative;
+  padding: 15px;
+
+  @media (min-width: 2400px) {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (min-width: $screen-xs-min) {
+    padding: 25px;
+  }
+  @media (min-width: $screen-sm-min) {
+    padding: 30px 60px 30px 60px;
+  }
+  background: $contrast;
+  font-family: $secondary-font-family-2;
+  font-size: 14px;
+  z-index: 10;
+  -webkit-box-shadow: 0px 2px 13px 0px rgba(30, 30, 30, 0.08);
+  -moz-box-shadow: 0px 2px 13px 0px rgba(30, 30, 30, 0.08);
+  box-shadow: 0px 2px 13px 0px rgba(30, 30, 30, 0.08);
+
+  * + p {
+    margin-top: 20px;
+    @media (min-width: $screen-md-min) {
+      margin-top: 37px;
+    }
+  }
+
+  * + .divider {
+    margin-top: 27px;
+  }
+
+  .divider + * {
+    margin-top: 20px;
+  }
+
+  .image-wrap {
+    margin-top: -87px;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  > p > q {
+    position: relative;
+    z-index: 1;
+    &:before {
+      position: absolute;
+      top: -34px;
+      left: -18px;
+      content: '\201c';
+      font-size: 120px;
+      line-height: 1;
+      opacity: .5;
+      z-index: -1;
+      @media (min-width: $screen-md-min) {
+        left: -30px;
+      }
+      color: #fbe9cf;
+      font-family: $secondary-font-family-1;
+    }
+  }
+}
+
+/*
+* @subsection   Pricing Box
+*/
+
+.pricing-box {
+  padding: 20px;
+  position: relative;
+
+  background: $contrast;
+  -webkit-box-shadow: 0px 2px 13px 0px rgba(30, 30, 30, 0.08);
+  -moz-box-shadow: 0px 2px 13px 0px rgba(30, 30, 30, 0.08);
+  box-shadow: 0px 2px 13px 0px rgba(30, 30, 30, 0.08);
+  font-size: 15px;
+
+  @media (min-width: $screen-lg-min) {
+    padding: 45px 50px 50px 50px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 9px;
+    bottom: 9px;
+    width: 43px;
+    background: $secondary;
+    display: none;
+    @media (min-width: $screen-xs-min) {
+      display: block;
+    }
+  }
+
+  &.pricing-box__left {
+    @media (min-width: $screen-xs-min) {
+      margin-left: 43px;
+    }
+    &:before {
+      right: 100%;
+    }
+  }
+
+  &.pricing-box__right {
+    @media (min-width: $screen-xs-min) {
+      margin-left: 43px;
+    }
+    @media (min-width: $screen-md-min) {
+      margin-right: 43px;
+      margin-left: 0;
+    }
+    &:before {
+      right: 100%;
+      left: auto;
+      @media (min-width: $screen-md-min) {
+        left: 100%;
+        right: auto;
+      }
+    }
+  }
+
+  &.pricing-box__center {
+    @media (min-width: $screen-xs-min) {
+      margin-right: 43px;
+    }
+    @media (min-width: $screen-md-min) {
+      margin-top: -40px;
+    }
+    &:before {
+      top: 9px;
+      bottom: 9px;
+      right: -43px;
+      left: 100%;
+      background: $primary;
+      @media (min-width: $screen-md-min) {
+        top: 65px;
+        bottom: -50px;
+      }
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      top: 100%;
+      right: -43px;
+      left: 32px;
+      bottom: -50px;
+      background: $primary;
+      display: none;
+      @media (min-width: $screen-md-min) {
+        display: block;
+      }
+    }
+  }
+
+  &_price {
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1;
+    color: $default;
+    font-family: $secondary-font-family-2;
+  }
+
+  &_price + h5 {
+    margin-top: 10px;
+  }
+
+  * + .divider {
+    margin-top: 20px;
+    @media (min-width: $screen-md-min) {
+      margin-top: 43px;
+    }
+  }
+
+  .divider + * {
+    margin-top: 15px;
+    @media (min-width: $screen-md-min) {
+      margin-top: 30px;
+    }
+  }
+
+  * + .btn {
+    margin-top: 30px;
+    @media (min-width: $screen-md-min) {
+      margin-top: 68px;
+    }
+  }
+
+  h5 {
+    color: $grayscale-default;
+  }
+}
+
+.pricing-box-wrap {
+
+  .pricing-box:last-child {
+    margin-right: 43px;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 100%;
+      top: 9px;
+      bottom: 9px;
+      width: 43px;
+      background: $secondary;
+    }
+  }
+}
+
+/*
+* @subsection   List
+*/
+
+.list {
+  li + li {
+    margin-top: 10px;
+  }
+}
+
+/*
+* @subsection   Inline List
+*/
+
+.inline-list {
+  @include transform(translateY(-30px));
+  margin-bottom: -30px;
+  margin-left: -30px;
+
+  > li {
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+}
+
+/*
+* @subsection   Marked List
+*/
+
+.marked-list {
+  text-align: left;
+  max-width: 160px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px;
+  @media (min-width: $screen-sm-min) {
+    margin-left: 0;
+  }
+  > li {
+    position: relative;
+    padding-left: 30px;
+
+    &:before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      background: $default;
+
+      @include transform(translateY(-50%));
+    }
+
+    & + li {
+      margin-top: 10px;
+    }
+
+    > a:hover {
+      color: $primary;
+    }
+  }
+}
+
+/*
+* @subsection   Index List
+*/
+
+.index-list {
+  counter-reset: index-list__counter;
+
+  > div {
+    > .index-list__counter {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      border: 2px solid #e1e1e1;
+      position: relative;
+      &:before {
+        content: counter(index-list__counter, decimal) '.';
+        counter-increment: index-list__counter;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+
+        color: $default;
+        font-family: $secondary-font-family-2;
+      }
+    }
+  }
+
+  // Sets offset between list rows
+  @include make-flow-offset(60px);
+}
+
+.index-list-1 {
+  counter-reset: li;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: $screen-md-min) {
+    margin-left: 0;
+  }
+  > li {
+    position: relative;
+    padding-left: 28px;
+    &:before {
+      content: counter(li, decimal) '.';
+      counter-increment: li;
+
+      position: absolute;
+      top: 50%;
+      left: 0;
+      @include transform(translateY(-50%));
+
+      font-family: $secondary-font-family-2;
+      color: $default;
+    }
+  }
+
+  // Sets offset between list rows
+  @include make-flow-offset(10px);
+}
+
+/*
+* @subsection   Ordered List
+*/
+
+.ordered-list {
+  > li {
+    padding-left: 20px;
+    list-style-type: decimal;
+  }
+}
+
+/*
+* @subsection   Terms  List
+*/
+
+.terms-list {
+  > dt + dd {
+    margin-top: 28px;
+  }
+
+  > dd + dt {
+    margin-top: 33px;
+  }
+}
+
+.terms-list-1 {
+  @include flexbox();
+  @include flex-direction(row);
+  @include justify-content(space-between);
+  position: relative;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
+  dt {
+
+    span {
+      background: $content-bg;
+      padding-right: 3px;
+    }
+    &:after {
+      content: '';
+      display: block;
+      border-bottom: 2px dotted $grayscale-default;
+      position: absolute;
+      width: 100%;
+      bottom: 8px;
+      left: 0;
+      height: 2px;
+      z-index: -1;
+    }
+  }
+  dd {
+    background: $content-bg;
+    font-style: italic;
+  }
+}
+
+/*
+* @subsection   Contact Info
+*/
+.contact-info {
+  padding-top: 5px;
+  max-width: 320px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 16px;
+
+  .heading-4 {
+    font-size: 22px;
+  }
+  @media (min-width: $screen-lg-min) {
+    max-width: 327px;
+  }
+  @media (min-width: $screen-md-min) {
+    margin-left: 0;
+  }
+  p + dl {
+    margin-top: 28px;
+  }
+  a[href^="mailto:"] {
+    font-style: italic;
+  }
+  dl {
+    dt, dd {
+      display: inline-block;
+    }
+
+    dt:after {
+      content: ':';
+    }
+
+    dt {
+      min-width: 53px;
+    }
+    dd {
+      @media (min-width: $screen-lg-min) {
+        float: right;
+      }
+    }
+    &:last-child {
+      margin-top: 24px;
+      dd {
+        float: none;
+        margin-right: 0;
+        line-height: 2;
+      }
+
+      a {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+/*
+* @subsection   Decorative wrap
+*/
+
+.wrap-default {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  @media (min-width: $screen-md-min) {
+    display: block;
+  }
+
+  .decorative-border {
+    border: 3px solid $default;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: none;
+    @media (min-width: $screen-md-min) {
+      z-index: 0;
+      display: block;
+    }
+  }
+
+  .image-wrap {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    img {
+      width: 100%;
+    }
+
+    @media (min-width: $screen-md-min) {
+      width: 100%;
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        border: 3px solid $contrast;
+      }
+    }
+  }
+
+}
+
+.decorative-wrap-1 {
+  @extend .wrap-default;
+  .decorative-border {
+    @media (min-width: $screen-md-min) {
+      top: -30px;
+      bottom: 30px;
+      left: -30px;
+      right: 30px;
+    }
+  }
+  .image-wrap {
+    @media (min-width: $screen-md-min) {
+      &:before {
+        top: -30px;
+        left: -30px;
+        right: 30px;
+        bottom: 30px;
+      }
+    }
+  }
+}
+
+.decorative-wrap-2 {
+  @extend .wrap-default;
+
+  .decorative-background {
+    position: absolute;
+    top: -110px;
+    left: -110px;
+    width: 100%;
+    height: 100%;
+    background: $primary;
+    display: none;
+    overflow: hidden;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      width: 100%;
+      height: 100%;
+      border: 3px solid $contrast;
+
+    }
+
+    @media (min-width: $screen-md-min) {
+      display: block;
+    }
+  }
+
+  .decorative-border {
+    @media (min-width: $screen-md-min) {
+      top: -60px;
+      bottom: 45px;
+      left: -60px;
+      right: 50px;
+    }
+  }
+  .image-wrap {
+    @media (min-width: $screen-md-min) {
+      &:before {
+        top: -60px;
+        bottom: 45px;
+        left: -60px;
+        right: 50px;
+      }
+    }
+  }
+}
+
+.decorative-wrap-3 {
+  @extend .wrap-default;
+  .decorative-background {
+    position: absolute;
+    top: 150px;
+    left: -30px;
+    width: 70%;
+    height: 70%;
+    background: $primary;
+    display: none;
+    overflow: hidden;
+
+    @media (min-width: $screen-md-min) {
+      display: block;
+    }
+  }
+
+  .decorative-border {
+    z-index: 3;
+    @media (min-width: $screen-md-min) {
+      z-index: 2;
+      top: -52px;
+      bottom: 120px;
+      left: -55px;
+      right: 174px;
+    }
+  }
+  .image-wrap {
+    z-index: 2;
+    @media (min-width: $screen-md-min) {
+      &:before {
+        top: -52px;
+        bottom: 120px;
+        left: -55px;
+        right: 174px;
+      }
+    }
+  }
+}
+
+.decorative-wrap-4 {
+  @extend .wrap-default;
+  .decorative-background {
+    position: absolute;
+    top: 150px;
+    left: -30px;
+    width: 95%;
+    height: 74%;
+    background: $primary;
+    display: none;
+    overflow: hidden;
+
+    @media (min-width: $screen-md-min) {
+      display: block;
+    }
+  }
+
+  .decorative-border {
+    z-index: 2;
+    @media (min-width: $screen-md-min) {
+      top: -52px;
+      bottom: 200px;
+      left: -55px;
+      right: 49px;
+    }
+  }
+  .image-wrap {
+    z-index: 2;
+    @media (min-width: $screen-md-min) {
+      &:before {
+        top: -52px;
+        bottom: 200px;
+        left: -55px;
+        right: 49px;
+      }
+    }
+  }
+}
+
+/*
+* @subsection   Thumb
+*/
+
+.thumb {
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+  > img {
+    width: 100%;
+  }
+
+  &__overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba($grayscale-darken, .5);
+    opacity: 0;
+    text-align: center;
+    transition: .3s all ease;
+
+    > * {
+      vertical-align: middle;
+      @include transform(translateY(30px));
+      transition: .3s all ease;
+    }
+
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 50%;
+    }
+  }
+
+  &:hover {
+    .thumb__overlay {
+      opacity: 1;
+
+      > * {
+        @include transform(translateY(0));
+      }
+    }
+  }
+}
+
+.divider {
+  margin-left: auto;
+  margin-right: auto;
+  height: 1px;
+  width: 100%;
+  background: $grayscale-lightest;
+}
+
+/*
+* @subsection   Link
+*/
+
+.link {
+  display: inline-block;
+}
+
+/*
+* @subsection   Video
+*/
+
+.video {
+  position: relative;
+  padding-bottom: percentage(340 / 570); // percentage( Height / Width ) on PSD
+
+  > iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/*
+* @section      Extensions
+* @description  This section holds some of style declarations for necessary
+*               scripts
+*/
+
+@import "extensions/_rd-navbar.scss";
+@import "extensions/_rd-mailform.scss";
+@import "extensions/_rd-google-map.scss";
+@import "extensions/_ui-to-top.scss";
+@import "extensions/_swiper.scss";
+@import "extensions/_owl-carousel.scss";
+
+/*
+* @section      Page Header
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page header
+*/
+
+.page-header {
+  background: $secondary;
+}
+
+/*
+* @section      Page Content
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page content
+*/
+
+.page-content {
+  .desktop & {
+    min-height: 100vh;
+  }
+}
+
+/*
+* @section      Page Footer
+* @description  This section holds specific style redeclarations for some
+*               of common elements in page footer
+*/
+
+.page-footer {
+
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @media (min-width: $screen-md-min) {
+    padding-top: 120px;
+    padding-bottom: 65px;
+  }
+
+  a.text-default:hover, a.text-default:active {
+    color: $primary;
+  }
+
+  .brand + * {
+    margin-top: 54px;
+  }
+
+  .inline-list > li.active {
+    color: $primary;
+  }
+
+  * + .divider {
+    margin-top: 44px;
+  }
+
+  .divider + * {
+    margin-top: 25px;
+  }
+
+  .brand {
+    padding: 23px 17px 24px 17px;
+    border: 3px solid $default;
+    display: inline-block;
+    &-name {
+      font-size: 21px;
+      line-height: (24/21);
+      color: $default;
+      font-family: $secondary-font-family-2;
+      text-transform: uppercase;
+    }
+  }
+
+  .divider {
+    display: block;
+    height: 1px;
+    background: #ebebeb;
+  }
+
+  .inline-list {
+    color: $default;
+    text-transform: uppercase;
+    font-family: $secondary-font-family-2;
+    font-size: 14px;
+    margin-left: -62px;
+
+    li {
+      display: block;
+      @media (min-width: $screen-sm-min) {
+        display: inline-block;
+      }
+      letter-spacing: 0.07em;
+      margin-left: 62px;
+    }
+    a:hover, a:active {
+      color: $primary;
+    }
+
+  }
+}
+
+.copyright {
+  font-family: $secondary-font-family-2;
+  font-size: 11px;
+  color: $contrast-darken;
+  @media (min-width: $screen-sm-min) {
+    font-size: 12px;
+  }
+
+}

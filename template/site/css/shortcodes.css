@@ -1,0 +1,26 @@
+/*
+* @package      Shortcodes
+* @description  This package holds style declarations for
+*               shortcodes page
+*/
+/*
+ * @subsection   Icon Box
+ */
+.icon-box {
+  position: relative;
+  padding: 10px 20px 10px 55px;
+  transition: .3s all ease;
+  border-radius: 5px;
+}
+
+.icon-box:hover {
+  color: #fff;
+  background: #d4205f;
+  box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.11);
+}
+
+.icon-box:before {
+  position: absolute;
+  left: 20px;
+  font-size: 1.4em;
+}

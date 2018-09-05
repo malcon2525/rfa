@@ -1,0 +1,214 @@
+/*
+* @subsection   Buttons
+*/
+
+$btn-xs-height: 40px;
+$btn-xs-size: 15px;
+
+$btn-sm-height: $btn-xs-height * 1.25;
+$btn-sm-size: $btn-xs-size * 1.13;
+
+$btn-md-height: 45px;
+$btn-md-size: 14px;
+
+$btn-lg-height: $btn-md-height * 1.33;
+$btn-lg-size: $btn-md-size;
+
+$btn-xl-height: $btn-lg-height * 1.125;
+$btn-xl-size: $btn-lg-size * 1.26;
+
+$btn-group-offset: 30px;
+
+// Button General Styles
+.btn {
+  display: inline-block;
+  text-align: center;
+  line-height: 1.2;
+  white-space: nowrap;
+  max-width: 100%;
+  border-style: solid;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  font-family: $secondary-font-family-2;  color: $white;
+
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+  .icon{
+    float: left;
+    vertical-align: middle;
+  }
+}
+
+// Button Layout Styles
+.btn-xs {
+  border-width: 2px;
+  padding: ceil(($btn-xs-height - ($btn-xs-size * 1.2) - 4) / 2);
+  font-size: ceil($btn-xs-size);
+
+  .icon{
+    font-size: $btn-md-size * 1.33;
+    padding-right: 10px;
+    line-height: (1em / 1.33);
+  }
+}
+
+.btn-sm {
+  border-width: 2px;
+  padding: ceil(($btn-sm-height - ($btn-sm-size * 1.2) - 4) / 2);
+  font-size: ceil($btn-sm-size);
+
+  .icon{
+    font-size: $btn-md-size * 1.29;
+    padding-right: 10px;
+    line-height: (1em / 1.29);
+  }
+}
+
+.btn-md {
+  border-width: 2px;
+  padding: ceil(($btn-md-height - ($btn-md-size * 1.2) - 4) / 2) 35px;
+  font-size: ceil($btn-md-size);
+
+  .icon{
+    font-size: $btn-md-size * 1.42;
+    padding-right: 10px;
+    line-height: (1em / 1.42);
+  }
+}
+
+.btn-lg {
+  border-width: 2px;
+  padding: ceil(($btn-lg-height - ($btn-lg-size * 1.2) - 4) / 2) 40px;
+  font-size: ceil($btn-lg-size);
+
+  .icon{
+    font-size: $btn-lg-size * 2.47;
+    padding-right: 20px;
+    line-height: (1em / 2.47);
+  }
+}
+
+.btn-xl {
+  border-width: 2px;
+  padding: ceil(($btn-xl-height - ($btn-xl-size * 1.2)) / 2);
+  font-size: ceil($btn-xl-size);
+
+  .icon{
+    font-size: $btn-xl-size * 1.875;
+    padding-right: 20px;
+    line-height: (1em / 1.875);
+  }
+}
+
+// Button Appearance Styles
+.btn-default {
+  color: $default;
+  background: transparent;
+  border-color: $contrast-darken;
+
+  &:hover {
+    color: $contrast;
+    background: $primary;
+    border-color: $primary;
+  }
+
+  &:active {
+    background: darken($contrast-darken, 5%);
+    border-color: darken($contrast-darken, 5%);
+  }
+}
+
+.btn-primary {
+  color: $white;
+  background: $primary;
+  border-color: $primary;
+
+  &:hover, &:active{
+    color: $white;
+    background: darken($primary, 10%);
+    border-color: darken($primary, 10%);
+  }
+
+}
+
+.btn.fa-facebook{
+  color: $white;
+  background: #4569ae;
+  border-color: #4569ae;
+  box-shadow: $box-shadow-key-small;
+
+  &:hover, &:active{
+    background: darken(#4569ae, 5%);
+    border-color: darken(#4569ae, 5%);
+  }
+
+  &:hover {
+    box-shadow: $box-shadow-ambient;
+  }
+
+  &:active {
+    box-shadow: $box-shadow-ambient;
+  }
+}
+
+.btn.fa-twitter{
+  color: $white;
+  background: #5ea9dd;
+  border-color: #5ea9dd;
+  box-shadow: $box-shadow-key-small;
+
+  &:hover, &:active{
+    background: darken(#5ea9dd, 5%);
+    border-color: darken(#5ea9dd, 5%);
+  }
+
+  &:hover {
+    box-shadow: $box-shadow-ambient;
+  }
+
+  &:active {
+    box-shadow: $box-shadow-ambient;
+  }
+}
+
+
+.btn.fa-pinterest{
+  color: $white;
+  background: #cb2027;
+  border-color: #cb2027;
+  box-shadow: $box-shadow-key-small;
+
+  &:hover, &:active{
+    background: darken(#cb2027, 5%);
+    border-color: darken(#cb2027, 5%);
+  }
+
+  &:hover {
+    box-shadow: $box-shadow-ambient;
+  }
+
+  &:active {
+    box-shadow: $box-shadow-ambient;
+  }
+}
+
+
+// Button Group Styles
+.btn-group {
+  @include transform(translateY(-$btn-group-offset));
+  margin-bottom: -$btn-group-offset;
+  margin-left: -$btn-group-offset;
+
+  .btn {
+    margin-top: $btn-group-offset;
+    margin-left: $btn-group-offset;
+  }
+}

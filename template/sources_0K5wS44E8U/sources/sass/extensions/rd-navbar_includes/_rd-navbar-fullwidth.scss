@@ -1,0 +1,70 @@
+/*
+* Fullwidth Layout
+*/
+
+$navbar-fullwidth-nav-color: $navbar-nav-color;
+$navbar-fullwidth-nav-background: $navbar-nav-background;
+$navbar-fullwidth-nav-hover-color: $navbar-nav-hover-color;
+$navbar-fullwidth-nav-hover-background: $navbar-nav-hover-background;
+$navbar-fullwidth-nav-active-color: $navbar-nav-active-color;
+$navbar-fullwidth-nav-active-background: $navbar-nav-active-background;
+
+.rd-navbar-fullwidth {
+  display: block;
+
+  // RD Navbar Panel
+  .rd-navbar-panel{
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .rd-navbar-nav-wrap{
+    position: relative;
+  }
+
+  // RD Navbar Nav
+  .rd-navbar-nav {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    text-align: center;
+    > li {
+      display: table-cell;
+
+      > a {
+        display: inline-block;
+        text-align: center;
+      }
+    }
+  }
+  &.rd-navbar--is-clone {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .rd-navbar-nav > li > a{
+      padding: 0;
+    }
+  }
+
+  // RD Navbar States
+  &.rd-navbar--is-stuck {
+    @include transform(translateY(-120px));
+
+    .rd-navbar-panel{
+      display: none;
+    }
+
+    > li > a{
+      padding: 0;
+      padding-bottom: 8px;
+      display: inline-block;
+    }
+  }
+
+  .rd-navbar-fullwidth--visible{
+    display: block;
+  }
+
+  .rd-navbar-fullwidth--hidden{
+    display: none;
+  }
+}

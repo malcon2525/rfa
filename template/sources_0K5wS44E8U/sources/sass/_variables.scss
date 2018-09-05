@@ -1,0 +1,60 @@
+//========================================================
+//                     Variables
+//=========================================================
+
+// Use relative measurements. Change to 0 on "Post Production"
+$debug: 0;
+
+// Layouts
+$layout-boxed-width: 1920px;
+$layout-boxed-bg: #444;
+
+
+// Resolutions
+$screen-xs-min: 480px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+$screen-xl-min: 1500px;
+
+// Fonts
+$default-font-family: 'Open Sans', sans-serif;
+$default-font-weight: 400;
+$default-font-size: 16px;
+$default-line-height: 26px;
+
+$secondary-font-family-1: 'Playfair Display', serif;
+$secondary-font-family-2: 'Montserrat', sans-serif;
+
+
+// Anchor Colors
+$default: #000;
+$contrast: #fff;
+$white: #fff;
+$primary: #dd2163;
+$secondary: #e3dcd1;
+
+$contrast-darken:darken(saturate(adjust_hue($contrast, 0), 0%), 10.196078431372541%);//e5e5e5
+$contrast-darkest:#fcfcfc;//fcfcfc
+
+// Relative Colors
+$grayscale-darken: lighten($default, 20%);
+$grayscale-default: #898989;
+$grayscale-lighten: #898989;
+$grayscale-lightest: #ebebeb;
+
+$content-color: $grayscale-default;
+$content-bg: $contrast;
+
+// Round Corvers
+$border-radius-small: 4px;
+$border-radius-base: 5px;
+$border-radius-large: 8px;
+
+
+// Shadows
+$box-shadow-ambient: 0 0 0 rgba(0, 0, 0, .12);
+$box-shadow-key-small: 3px 4px 5px 0px rgba(0, 0, 0, 0.11);
+$box-shadow-key-light: 3px 4px 8px 0px rgba(0, 0, 0, 0.11);
+$box-shadow-key-light-large: 8px 14px 18px 0px rgba(0, 0, 0, 0.11);
+

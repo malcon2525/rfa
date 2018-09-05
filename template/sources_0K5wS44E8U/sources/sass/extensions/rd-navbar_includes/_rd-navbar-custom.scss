@@ -1,0 +1,72 @@
+/*
+* Custom Layout
+*/
+
+
+.rd-navbar-static {
+  &.rd-navbar-custom {
+    padding-bottom: 30px;
+    padding-top: 50px;
+
+
+    .rd-navbar-nav{
+      margin-top: 24px;
+      @media (min-width: 1700px) {
+          margin-top: 14px;
+      }
+    }
+
+    .rd-navbar-toggle {
+      display: none;
+    }
+  }
+}
+
+.rd-navbar-fullwidth, .rd-navbar-static{
+
+  &.rd-navbar-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    border-bottom: none;
+    box-shadow: none;
+
+
+    &:after {
+      background: transparent;
+    }
+  }
+
+  &.rd-navbar-custom.rd-navbar--is-clone {
+    position: fixed;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: $secondary;
+    box-shadow: $box-shadow-key-small;
+
+
+    .brand-logo{
+      img{
+        width: 80%;
+      }
+    }
+    
+    .brand-name{
+      color: $default;
+    }
+
+    .rd-navbar-nav{
+      opacity: 1;
+      pointer-events: visible;
+      margin-top: 8px;
+
+    }
+
+    .rd-navbar-toggle{
+      display: none;
+    }
+  }
+}
+

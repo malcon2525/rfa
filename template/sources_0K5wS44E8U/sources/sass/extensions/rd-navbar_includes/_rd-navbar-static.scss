@@ -1,0 +1,91 @@
+/*
+* Static Layout
+*/
+
+$navbar-static-nav-indent: 15px;
+
+$navbar-static-nav-color: $navbar-nav-color;
+$navbar-static-nav-background: $navbar-nav-background;
+$navbar-static-nav-hover-color: $navbar-nav-hover-color;
+$navbar-static-nav-hover-background: $navbar-nav-hover-background;
+$navbar-static-nav-active-color: $navbar-nav-active-color;
+$navbar-static-nav-active-background: $navbar-nav-active-background;
+
+
+.rd-navbar-static {
+  display: block;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  .rd-navbar-panel, .rd-navbar-nav-wrap {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .rd-navbar-nav > li > a{
+    line-height: 1;
+  }
+
+  .rd-navbar-inner{
+    @include flexbox();
+    @include flex-direction(row);
+    @include justify-content(space-between);
+    @include align-items(center);
+  }
+
+
+
+  .rd-navbar-panel {
+    text-align: left;
+    min-width: 230px;
+  }
+
+  .rd-navbar-nav-wrap {
+    text-align: right;
+    @include flexbox();
+    @include flex-direction(row);
+    @include justify-content(center);
+  }
+
+  .rd-navbar-nav{
+    transition: all .5s ease;
+    > li {
+      display: inline-block;
+      margin-left: $navbar-static-nav-indent;
+
+      + li{
+        margin-left: 63px;
+      }
+    }
+  }
+
+  &.rd-navbar--is-clone {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    .rd-navbar-nav{
+      margin-top: 8px;
+    }
+
+    .rd-navbar-brand{
+      margin-top: -3px;
+    }
+
+    .rd-navbar-nav > li > a{
+      display: inline-block;
+      padding: 0;
+      padding-bottom: 4px;
+    }
+  }
+
+  // RD Navbar States
+  .rd-navbar-static--visible{
+    display: block;
+  }
+
+  .rd-navbar-static--hidden{
+    display: none;
+  }
+
+
+}
+
